@@ -20,7 +20,7 @@ describe('app.js request handling', () => {
       });
   });
 
-  it('handles a GET request for path "/red" by echoing the request in the response', () => {
+  it('handles a GET request for path "/red"', () => {
     return request(app) 
       .get('/red')
       .then(res => {
@@ -28,5 +28,11 @@ describe('app.js request handling', () => {
       });
   });
 
-  
+  it('handles a GET request for path "/green"', () => {
+    return request(app) 
+      .get('/green')
+      .then(res => {
+        expect(res.text).toEqual('<h1>green</h1>');
+      });
+  });
 });
