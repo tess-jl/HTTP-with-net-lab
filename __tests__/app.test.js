@@ -10,4 +10,13 @@ describe('app.js request handling', () => {
         expect(res.text).toEqual('hi');
       });
   });
+
+  it('handles a POST request for path "/echo" by echoing the request in the response', () => {
+    return request(app) 
+      .post('/echo')
+      .send('my plain text')
+      .then(res => {
+        expect(res.request._data).toEqual('my plain text');
+      });
+  });
 });
