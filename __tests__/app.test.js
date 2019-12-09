@@ -19,4 +19,14 @@ describe('app.js request handling', () => {
         expect(res.request._data).toEqual('my plain text');
       });
   });
+
+  it('handles a GET request for path "/red" by echoing the request in the response', () => {
+    return request(app) 
+      .get('/red')
+      .then(res => {
+        expect(res.text).toEqual('<h1>red</h1>');
+      });
+  });
+
+  
 });
