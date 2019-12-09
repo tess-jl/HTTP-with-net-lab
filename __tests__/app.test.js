@@ -6,7 +6,6 @@ describe('app.js request handling', () => {
     return request(app) 
       .get('/')
       .then(res => {
-        // console.log(res, 'this is the res from our server back to the client');
         expect(res.text).toEqual('hi');
       });
   });
@@ -33,6 +32,14 @@ describe('app.js request handling', () => {
       .get('/green')
       .then(res => {
         expect(res.text).toEqual('<h1>green</h1>');
+      });
+  });
+
+  it('handles a GET request for path "/blue"', () => {
+    return request(app) 
+      .get('/blue')
+      .then(res => {
+        expect(res.text).toEqual('<h1>blue</h1>');
       });
   });
 });
