@@ -1,4 +1,4 @@
-# HTTP-with-net-lab
+# HTTP with NET Lab (Nothin' But .NET!) 
 
 ### Node.js, Express, Jest
 
